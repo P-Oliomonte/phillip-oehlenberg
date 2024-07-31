@@ -33,7 +33,7 @@ export default function Layout({ children }) {
         </StyledLink>
 
         <StyledLink
-          href="/"
+          href="/cv"
           $isActive={page === "cv"}
           onClick={() => setPage("cv")}
         >
@@ -50,7 +50,7 @@ export default function Layout({ children }) {
       </StyledNavigation>
       <div>{children}</div>
     </>
-  )
+  );
 }
 
 const StyledNavigation = styled.nav`
@@ -64,7 +64,7 @@ const StyledNavigation = styled.nav`
   top: 6vw;
   height: 3rem;
   z-index: 2;
-`
+`;
 
 const StyledLink = styled(Link)`
   font-size: 0.9rem;
@@ -97,4 +97,4 @@ const StyledLink = styled(Link)`
     border-right: 3px solid #000;
     border-radius: 0 8px 8px 0;
   }
-`
+`;

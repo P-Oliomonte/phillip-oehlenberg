@@ -4,22 +4,24 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <HeaderContainer>
-      <ImageWrapper>
-        <Image
-          src="/logo_icon_ani_complete_small.webp"
-          alt="header-animation"
-          fill
-          priority
-          unoptimized
-        />
-      </ImageWrapper>
-      <Headline>
-        HEY THERE, <HeadlineHighlight>I&apos;M PHILLIP.</HeadlineHighlight> NICE
-        TO MEET YOU!
-      </Headline>
-      <StyledLink href="/profile">Go to Profile &gt;&gt;&gt;</StyledLink>
-    </HeaderContainer>
+    <main>
+      <HeaderContainer>
+        <ImageWrapper>
+          <Image
+            src="/logo_icon_ani_complete_small.webp"
+            alt="header-animation"
+            fill
+            priority
+            unoptimized
+          />
+        </ImageWrapper>
+        <Headline>
+          HEY THERE, <HeadlineHighlight>I&apos;M PHILLIP.</HeadlineHighlight>{" "}
+          NICE TO MEET YOU!
+        </Headline>
+        <StyledLink href="/profile">Go to Profile &gt;&gt;&gt;</StyledLink>
+      </HeaderContainer>
+    </main>
   );
 }
 
@@ -27,6 +29,11 @@ const breatheAnimation = keyframes`
 0% {letter-spacing: 0;}
 50% {letter-spacing: 0.03rem;}
 100% {letter-spacing: 0;}
+`;
+
+const contentAnimation = keyframes`
+0% { top: 10vw; opacity: 0; }
+100% { top: 0; opacity: 1; }
 `;
 
 const HeaderContainer = styled.div`
@@ -54,6 +61,9 @@ const ImageWrapper = styled.div`
 `;
 
 const Headline = styled.h1`
+  position: relative;
+  animation-name: ${contentAnimation};
+  animation-duration: 0.5s;
   width: 80%;
   font-size: 12vw;
   font-weight: 800;
