@@ -58,7 +58,7 @@ const StyledNavigation = styled.nav`
   display: flex;
   justify-content: space-evenly;
   position: fixed;
-  top: 6vw;
+  top: 30px;
   height: 3rem;
   z-index: 2;
 `;

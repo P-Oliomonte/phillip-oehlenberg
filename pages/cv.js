@@ -1,4 +1,4 @@
-import { resumeCategories } from "@/lib/resume";
+import { workExperiences, education, school } from "@/lib/resume";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
@@ -9,39 +9,91 @@ export default function CV() {
         <Image src="/Icon_CV.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineProfile>CV</HeadlineProfile>
+
       <ResumeContainer>
-        {resumeCategories.map((category) => {
-          const cards = category.entries;
-          return (
-            <div key={category.title}>
-              <CvTitle>{category.title}</CvTitle>
-              {cards.map((entry) => {
-                return (
-                  <EntryCard key={entry.place}>
-                    <EntryDate>{entry.date}</EntryDate>
-                    <EntryPlace>{entry.place}</EntryPlace>
-                    <EntryType>{entry.type}</EntryType>
-                    {entry.description && (
-                      <EntryDescription>{entry.description}</EntryDescription>
-                    )}
-                    {entry.clients && (
-                      <EntryClients>
-                        <strong>Clients: </strong>
-                        {entry.clients}
-                      </EntryClients>
-                    )}
-                    {entry.degree && (
-                      <EntryDegree>
-                        <strong>Degree: </strong>
-                        {entry.degree}
-                      </EntryDegree>
-                    )}
-                  </EntryCard>
-                );
-              })}
-            </div>
-          );
-        })}
+        <CategoryContainer>
+          <CategoryTitle>{workExperiences.title}</CategoryTitle>
+          {workExperiences.entries.map((entry) => {
+            return (
+              <EntryCard key={entry.place}>
+                <EntryDate>{entry.date}</EntryDate>
+                <EntryPlace>{entry.place}</EntryPlace>
+                <EntryType>{entry.type}</EntryType>
+                {entry.description && (
+                  <EntryDescription>{entry.description}</EntryDescription>
+                )}
+                {entry.clients && (
+                  <EntryClients>
+                    <strong>Clients: </strong>
+                    {entry.clients}
+                  </EntryClients>
+                )}
+                {entry.degree && (
+                  <EntryDegree>
+                    <strong>Degree: </strong>
+                    {entry.degree}
+                  </EntryDegree>
+                )}
+              </EntryCard>
+            );
+          })}
+        </CategoryContainer>
+
+        <CategoryContainer>
+          <CategoryTitle>{education.title}</CategoryTitle>
+          {education.entries.map((entry) => {
+            return (
+              <EntryCard key={entry.place}>
+                <EntryDate>{entry.date}</EntryDate>
+                <EntryPlace>{entry.place}</EntryPlace>
+                <EntryType>{entry.type}</EntryType>
+                {entry.description && (
+                  <EntryDescription>{entry.description}</EntryDescription>
+                )}
+                {entry.clients && (
+                  <EntryClients>
+                    <strong>Clients: </strong>
+                    {entry.clients}
+                  </EntryClients>
+                )}
+                {entry.degree && (
+                  <EntryDegree>
+                    <strong>Degree: </strong>
+                    {entry.degree}
+                  </EntryDegree>
+                )}
+              </EntryCard>
+            );
+          })}
+        </CategoryContainer>
+
+        <CategoryContainer>
+          <CategoryTitle>{school.title}</CategoryTitle>
+          {school.entries.map((entry) => {
+            return (
+              <EntryCard key={entry.place}>
+                <EntryDate>{entry.date}</EntryDate>
+                <EntryPlace>{entry.place}</EntryPlace>
+                <EntryType>{entry.type}</EntryType>
+                {entry.description && (
+                  <EntryDescription>{entry.description}</EntryDescription>
+                )}
+                {entry.clients && (
+                  <EntryClients>
+                    <strong>Clients: </strong>
+                    {entry.clients}
+                  </EntryClients>
+                )}
+                {entry.degree && (
+                  <EntryDegree>
+                    <strong>Degree: </strong>
+                    {entry.degree}
+                  </EntryDegree>
+                )}
+              </EntryCard>
+            );
+          })}
+        </CategoryContainer>
       </ResumeContainer>
     </CvContainer>
   );
@@ -77,28 +129,42 @@ const CvContainer = styled.main`
   gap: 4vw;
 `;
 
-const EntryDescription = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 10px;
+const IconWrapper = styled.div`
+  position: relative;
+  animation-name: ${iconAnimation};
+  animation-duration: 0.5s;
+  height: 30vw;
+  width: 30vw;
+  max-height: 160px;
+  justify-self: center;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+`;
+
+const HeadlineProfile = styled.h1`
+  position: relative;
+  animation-name: ${headlineAnimation};
+  animation-duration: 0.5s;
+  font-size: min(10vw, 2.5rem);
+  padding-bottom: 1.2em;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  text-align: center;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
 `;
 
 const ResumeContainer = styled.div`
+  justify-self: center;
   grid-column: 1 / 3;
   grid-row: 3/4;
-  /* column-count: 2; */
+
+  /* column-count: 2;
+  column-gap: 30px; */
 `;
 
-const CvTitle = styled.h2`
-  color: #fff;
-  background-color: #000;
-  padding: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  font-size: 1.6rem;
+const CategoryContainer = styled.div`
+  padding-bottom: 50px;
 `;
 
 const EntryCard = styled.div`
@@ -138,7 +204,25 @@ const EntryType = styled.h4`
   padding-left: 12px;
   padding-right: 12px;
   border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+`;
+
+const EntryDescription = styled.p`
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  border-top: 2px solid #000;
+`;
+
+const CategoryTitle = styled.h2`
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.6rem;
 `;
 
 const EntryClients = styled.p`
@@ -158,29 +242,5 @@ const EntryDegree = styled.p`
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 10px;
-`;
-
-const IconWrapper = styled.div`
-  position: relative;
-  animation-name: ${iconAnimation};
-  animation-duration: 0.5s;
-  height: 30vw;
-  width: 30vw;
-  max-height: 160px;
-  justify-self: center;
-  grid-column: 1 / 3;
-  grid-row: 1 / 2;
-`;
-
-const HeadlineProfile = styled.h1`
-  position: relative;
-  animation-name: ${headlineAnimation};
-  animation-duration: 0.5s;
-  font-size: min(10vw, 2.5rem);
-  padding-bottom: 1.2em;
-  padding-left: 4vw;
-  padding-right: 4vw;
-  text-align: center;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
+  border-top: 2px solid #000;
 `;

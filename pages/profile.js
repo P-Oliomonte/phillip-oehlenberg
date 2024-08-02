@@ -132,7 +132,7 @@ const TextProfile = styled.p`
   line-height: 1.4;
   color: #fff;
   width: 90%;
-  padding: 30px;
+  padding: 16px;
   grid-column: 1 / 3;
   grid-row: 4 / 5;
   background-color: #000;
