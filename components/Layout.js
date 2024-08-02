@@ -1,17 +1,14 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { useState } from "react";
 
-export default function Layout({ children }) {
-  const [page, setPage] = useState("home");
-
+export default function Layout({ children, page, onPageChange }) {
   return (
     <>
       <StyledNavigation>
         <StyledLink
           href="/"
           $isActive={page === "home"}
-          onClick={() => setPage("home")}
+          onClick={() => onPageChange("home")}
         >
           HOME
         </StyledLink>
@@ -19,31 +16,31 @@ export default function Layout({ children }) {
         <StyledLink
           href="/profile"
           $isActive={page === "profile"}
-          onClick={() => setPage("profile")}
+          onClick={() => onPageChange("profile")}
         >
           PROFILE
         </StyledLink>
 
         <StyledLink
-          href="/"
-          $isActive={page === "portfolio"}
-          onClick={() => setPage("portfolio")}
-        >
-          PORTFOLIO
-        </StyledLink>
-
-        <StyledLink
           href="/cv"
           $isActive={page === "cv"}
-          onClick={() => setPage("cv")}
+          onClick={() => onPageChange("cv")}
         >
           CV
         </StyledLink>
 
         <StyledLink
-          href="/"
+          href="/portfolio"
+          $isActive={page === "portfolio"}
+          onClick={() => onPageChange("portfolio")}
+        >
+          PORTFOLIO
+        </StyledLink>
+
+        <StyledLink
+          href="/contact"
           $isActive={page === "contact"}
-          onClick={() => setPage("contact")}
+          onClick={() => onPageChange("contact")}
         >
           CONTACT
         </StyledLink>
