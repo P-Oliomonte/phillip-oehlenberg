@@ -2,7 +2,9 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Profile() {
+export default function Profile({ onPageChange }) {
+  onPageChange("profile");
+
   return (
     <ProfileContainer>
       <IconWrapper>

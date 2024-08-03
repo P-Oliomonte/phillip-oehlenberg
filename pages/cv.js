@@ -4,19 +4,21 @@ import IconContainer from "@/components/IconContainer";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
-const languageIcons = iconSets.filter(
-  (iconSet) => iconSet.title === "Languages"
-)[0];
+export default function CV({ onPageChange }) {
+  onPageChange("cv");
 
-const techStackIcons = iconSets.filter(
-  (iconSet) => iconSet.title === "Tech Stack"
-)[0];
+  const languageIcons = iconSets.filter(
+    (iconSet) => iconSet.title === "Languages"
+  )[0];
 
-const graphicsAppsIcons = iconSets.filter(
-  (iconSet) => iconSet.title === "Graphics Apps"
-)[0];
+  const techStackIcons = iconSets.filter(
+    (iconSet) => iconSet.title === "Tech Stack"
+  )[0];
 
-export default function CV() {
+  const graphicsAppsIcons = iconSets.filter(
+    (iconSet) => iconSet.title === "Graphics Apps"
+  )[0];
+
   return (
     <CvContainer>
       <IconWrapper>

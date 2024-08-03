@@ -5,43 +5,23 @@ export default function Layout({ children, page, onPageChange }) {
   return (
     <>
       <StyledNavigation>
-        <StyledLink
-          href="/"
-          $isActive={page === "home"}
-          onClick={() => onPageChange("home")}
-        >
+        <StyledLink href="/" $isActive={page === "home"}>
           HOME
         </StyledLink>
 
-        <StyledLink
-          href="/profile"
-          $isActive={page === "profile"}
-          onClick={() => onPageChange("profile")}
-        >
+        <StyledLink href="/profile" $isActive={page === "profile"}>
           PROFILE
         </StyledLink>
 
-        <StyledLink
-          href="/cv"
-          $isActive={page === "cv"}
-          onClick={() => onPageChange("cv")}
-        >
+        <StyledLink href="/cv" $isActive={page === "cv"}>
           CV
         </StyledLink>
 
-        <StyledLink
-          href="/portfolio"
-          $isActive={page === "portfolio"}
-          onClick={() => onPageChange("portfolio")}
-        >
+        <StyledLink href="/portfolio" $isActive={page === "portfolio"}>
           PORTFOLIO
         </StyledLink>
 
-        <StyledLink
-          href="/contact"
-          $isActive={page === "contact"}
-          onClick={() => onPageChange("contact")}
-        >
+        <StyledLink href="/contact" $isActive={page === "contact"}>
           CONTACT
         </StyledLink>
       </StyledNavigation>
