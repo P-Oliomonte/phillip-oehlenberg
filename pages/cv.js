@@ -1,6 +1,20 @@
-import { workExperiences, education, school } from "@/lib/resume";
+import { workExperiences, education, school, iconSets } from "@/lib/resume";
+import ResumeCategory from "@/components/ResumeCategory";
+import IconContainer from "@/components/IconContainer";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+
+const languageIcons = iconSets.filter(
+  (iconSet) => iconSet.title === "Languages"
+)[0];
+
+const techStackIcons = iconSets.filter(
+  (iconSet) => iconSet.title === "Tech Stack"
+)[0];
+
+const graphicsAppsIcons = iconSets.filter(
+  (iconSet) => iconSet.title === "Graphics Apps"
+)[0];
 
 export default function CV() {
   return (
@@ -10,90 +24,16 @@ export default function CV() {
       </IconWrapper>
       <HeadlineProfile>CV</HeadlineProfile>
 
+      <Icons>
+        <IconContainer iconSet={languageIcons} />
+        <IconContainer iconSet={techStackIcons} />
+        <IconContainer iconSet={graphicsAppsIcons} />
+      </Icons>
+
       <ResumeContainer>
-        <CategoryContainer>
-          <CategoryTitle>{workExperiences.title}</CategoryTitle>
-          {workExperiences.entries.map((entry) => {
-            return (
-              <EntryCard key={entry.place}>
-                <EntryDate>{entry.date}</EntryDate>
-                <EntryPlace>{entry.place}</EntryPlace>
-                <EntryType>{entry.type}</EntryType>
-                {entry.description && (
-                  <EntryDescription>{entry.description}</EntryDescription>
-                )}
-                {entry.clients && (
-                  <EntryClients>
-                    <strong>Clients: </strong>
-                    {entry.clients}
-                  </EntryClients>
-                )}
-                {entry.degree && (
-                  <EntryDegree>
-                    <strong>Degree: </strong>
-                    {entry.degree}
-                  </EntryDegree>
-                )}
-              </EntryCard>
-            );
-          })}
-        </CategoryContainer>
-
-        <CategoryContainer>
-          <CategoryTitle>{education.title}</CategoryTitle>
-          {education.entries.map((entry) => {
-            return (
-              <EntryCard key={entry.place}>
-                <EntryDate>{entry.date}</EntryDate>
-                <EntryPlace>{entry.place}</EntryPlace>
-                <EntryType>{entry.type}</EntryType>
-                {entry.description && (
-                  <EntryDescription>{entry.description}</EntryDescription>
-                )}
-                {entry.clients && (
-                  <EntryClients>
-                    <strong>Clients: </strong>
-                    {entry.clients}
-                  </EntryClients>
-                )}
-                {entry.degree && (
-                  <EntryDegree>
-                    <strong>Degree: </strong>
-                    {entry.degree}
-                  </EntryDegree>
-                )}
-              </EntryCard>
-            );
-          })}
-        </CategoryContainer>
-
-        <CategoryContainer>
-          <CategoryTitle>{school.title}</CategoryTitle>
-          {school.entries.map((entry) => {
-            return (
-              <EntryCard key={entry.place}>
-                <EntryDate>{entry.date}</EntryDate>
-                <EntryPlace>{entry.place}</EntryPlace>
-                <EntryType>{entry.type}</EntryType>
-                {entry.description && (
-                  <EntryDescription>{entry.description}</EntryDescription>
-                )}
-                {entry.clients && (
-                  <EntryClients>
-                    <strong>Clients: </strong>
-                    {entry.clients}
-                  </EntryClients>
-                )}
-                {entry.degree && (
-                  <EntryDegree>
-                    <strong>Degree: </strong>
-                    {entry.degree}
-                  </EntryDegree>
-                )}
-              </EntryCard>
-            );
-          })}
-        </CategoryContainer>
+        <ResumeCategory data={workExperiences} />
+        <ResumeCategory data={education} />
+        <ResumeCategory data={school} />
       </ResumeContainer>
     </CvContainer>
   );
@@ -157,90 +97,14 @@ const HeadlineProfile = styled.h1`
 const ResumeContainer = styled.div`
   justify-self: center;
   grid-column: 1 / 3;
-  grid-row: 3/4;
+  grid-row: 4/5;
+  padding-top: 40px;
 
   /* column-count: 2;
   column-gap: 30px; */
 `;
 
-const CategoryContainer = styled.div`
-  padding-bottom: 50px;
-`;
-
-const EntryCard = styled.div`
-  box-shadow: 8px 8px #000;
-  background-color: #fff;
-  border: 3px solid #000;
-  margin-top: 30px;
-  border-radius: 0 0 8px 8px;
-`;
-
-const EntryDate = styled.h5`
-  background-color: #000;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 450;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-bottom: 2px solid #000;
-`;
-
-const EntryPlace = styled.h3`
-  font-size: 1.5rem;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
-`;
-
-const EntryType = styled.h4`
-  font-size: 1.2rem;
-  font-weight: 450;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-top: 2px solid #000;
-`;
-
-const EntryDescription = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 10px;
-  border-top: 2px solid #000;
-`;
-
-const CategoryTitle = styled.h2`
-  color: #fff;
-  background-color: #000;
-  padding: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  font-size: 1.6rem;
-`;
-
-const EntryClients = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 10px;
-  border-top: 2px dotted #000;
-`;
-
-const EntryDegree = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 10px;
-  border-top: 2px solid #000;
+const Icons = styled.div`
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
 `;
