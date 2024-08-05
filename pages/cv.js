@@ -3,6 +3,7 @@ import ResumeCategory from "@/components/ResumeCategory";
 import IconContainer from "@/components/IconContainer";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CV({ onPageChange }) {
   onPageChange("cv");
@@ -37,6 +38,7 @@ export default function CV({ onPageChange }) {
         <ResumeCategory data={education} />
         <ResumeCategory data={school} />
       </ResumeContainer>
+      <StyledLink href="/portfolio">Go to Portfolio &gt;&gt;&gt;</StyledLink>
     </CvContainer>
   );
 }
@@ -54,6 +56,12 @@ const headlineAnimation = keyframes`
 const contentAnimation = keyframes`
 0% { top: 10vw; opacity: 0; }
 100% { top: 0; opacity: 1; }
+`;
+
+const breatheAnimation = keyframes`
+0% {letter-spacing: 0;}
+50% {letter-spacing: 0.03rem;}
+100% {letter-spacing: 0;}
 `;
 
 const CvContainer = styled.main`
@@ -109,4 +117,18 @@ const ResumeContainer = styled.div`
 const Icons = styled.div`
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+`;
+
+const StyledLink = styled(Link)`
+  text-align: center;
+  font-size: min(4.5vw, 1.5rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  padding-top: 2rem;
+  animation-name: ${breatheAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
 `;

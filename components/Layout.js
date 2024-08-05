@@ -45,7 +45,7 @@ const StyledNavigation = styled.nav`
 
 const StyledLink = styled(Link)`
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: ${(props) => (props.$isActive ? "500" : "400")};
   color: ${(props) => (props.$isActive ? "#fff" : "#000")};
   text-decoration: none;
   text-align: center;
@@ -70,7 +70,7 @@ const StyledLink = styled(Link)`
     border-radius: 8px 0 0 8px;
   }
 
-  &:nth-of-type(5) {
+  &:nth-last-of-type(1) {
     border-right: 3px solid #000;
     border-radius: 0 8px 8px 0;
   }

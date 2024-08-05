@@ -62,8 +62,8 @@ const headlineAnimation = keyframes`
 `;
 
 const contentAnimation = keyframes`
-0% { top: 10vw; opacity: 0; letter-spacing: 0.5rem;}
-100% { top: 0; opacity: 1; letter-spacing: 0;}
+0% { top: 10vw; opacity: 0; }
+100% { top: 0; opacity: 1; }
 `;
 
 const ProfileContainer = styled.main`
@@ -143,12 +143,11 @@ const TextProfile = styled.p`
 
 const StyledLink = styled(Link)`
   text-align: center;
-  position: relative;
-  top: 2.5rem;
   font-size: min(4.5vw, 1.5rem);
   font-weight: 500;
   text-decoration: none;
   color: #000;
+  padding-top: 2rem;
   animation-name: ${breatheAnimation};
   animation-duration: 1s;
   animation-iteration-count: infinite;

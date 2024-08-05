@@ -31,7 +31,7 @@ const IconContainerHeadline = styled.h2`
   padding: 10px;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 500;
 `;
 
@@ -40,6 +40,7 @@ const MainContainer = styled.section`
   justify-content: space-evenly;
   border: 3px solid #000;
   box-shadow: 8px 8px #000;
+  border-radius: 0 0 8px 8px;
   background-color: #fff;
   flex-wrap: wrap;
   gap: 20px;
@@ -56,13 +57,13 @@ const IconCard = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 `;
 
 const IconSubline = styled.h3`
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
   text-align: center;
   padding-top: 0.5rem;
 `;

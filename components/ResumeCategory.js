@@ -34,6 +34,10 @@ export default function ResumeCategory({ data }) {
 
 const CategoryContainer = styled.section`
   padding-bottom: 50px;
+
+  &:nth-last-of-type(1) {
+    padding-bottom: 0;
+  }
 `;
 
 const EntryCard = styled.div`
@@ -49,7 +53,7 @@ const EntryDate = styled.h5`
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
-  font-weight: 450;
+  font-weight: 400;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 12px;
@@ -58,7 +62,7 @@ const EntryDate = styled.h5`
 `;
 
 const EntryPlace = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 12px;
@@ -66,7 +70,7 @@ const EntryPlace = styled.h3`
 `;
 
 const EntryType = styled.h4`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 450;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -91,7 +95,8 @@ const CategoryTitle = styled.h2`
   padding: 10px;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 `;
 
 const EntryClients = styled.p`
