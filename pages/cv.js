@@ -33,6 +33,8 @@ export default function CV({ onPageChange }) {
         <IconContainer iconSet={graphicsAppsIcons} />
       </Icons>
 
+      <StripedFiller />
+
       <ResumeContainer>
         <ResumeCategory data={workExperiences} />
         <ResumeCategory data={education} />
@@ -71,11 +73,9 @@ const CvContainer = styled.main`
   margin: 0 auto;
   margin-top: 7rem;
   margin-bottom: 7rem;
-  padding-left: 4vw;
-  padding-right: 4vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto;
+  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto;
   gap: 4vw;
 `;
 
@@ -104,19 +104,43 @@ const HeadlineProfile = styled.h1`
   grid-row: 2 / 3;
 `;
 
-const ResumeContainer = styled.div`
-  justify-self: center;
+const Space = styled.div`
+  height: 40px;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+  width: 92vw;
   grid-column: 1 / 3;
-  grid-row: 4/5;
+  grid-row: 3 / 4;
+`;
+
+const StripedFiller = styled.div`
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+  height: 40px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #000 0px,
+    #000 15px,
+    #fff 15px,
+    #fff 30px
+  );
+`;
+
+const ResumeContainer = styled.div`
+  margin: 0 auto;
+  width: 92vw;
+  grid-column: 1 / 3;
+  grid-row: 5/6;
   padding-top: 40px;
 
   /* column-count: 2;
   column-gap: 30px; */
-`;
-
-const Icons = styled.div`
-  grid-column: 1 / 3;
-  grid-row: 3 / 4;
 `;
 
 const StyledLink = styled(Link)`
@@ -130,5 +154,5 @@ const StyledLink = styled(Link)`
   animation-duration: 1s;
   animation-iteration-count: infinite;
   grid-column: 1 / 3;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
 `;

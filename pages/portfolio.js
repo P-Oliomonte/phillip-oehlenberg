@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Portfolio({ onPageChange }) {
   onPageChange("portfolio");
@@ -7,12 +8,33 @@ export default function Portfolio({ onPageChange }) {
   return (
     <CvContainer>
       <IconWrapper>
-        <Image src="/Icon_CV.svg" fill alt="icon_profile" />
+        <Image src="/Icon_Portfolio.svg" fill alt="icon_profile" />
       </IconWrapper>
-      <HeadlineProfile>CV</HeadlineProfile>
+      <HeadlineProfile>PORTFOLIO</HeadlineProfile>
     </CvContainer>
   );
 }
+
+const iconAnimation = keyframes`
+0% { top: -20vw; opacity: 0;}
+100% { top: 0; opacity: 1;}
+`;
+
+const headlineAnimation = keyframes`
+0% { left: -20vw; opacity: 0; letter-spacing: 0.5rem;}
+100% { left: 0; opacity: 1; letter-spacing: 0;}
+`;
+
+const contentAnimation = keyframes`
+0% { top: 10vw; opacity: 0; }
+100% { top: 0; opacity: 1; }
+`;
+
+const breatheAnimation = keyframes`
+0% {letter-spacing: 0;}
+50% {letter-spacing: 0.03rem;}
+100% {letter-spacing: 0;}
+`;
 
 const CvContainer = styled.main`
   position: relative;

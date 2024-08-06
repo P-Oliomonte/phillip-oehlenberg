@@ -1,16 +1,24 @@
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home({ onPageChange }) {
   onPageChange("home");
+
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    const timestamp = new Date().getTime();
+    setImageSrc(`/logo_icon_ani_complete_small.webp?t=${timestamp}`);
+  }, []);
 
   return (
     <main>
       <HeaderContainer>
         <ImageWrapper>
           <Image
-            src="/logo_icon_ani_complete_small.webp"
+            src={imageSrc}
             alt="header-animation"
             fill
             priority
