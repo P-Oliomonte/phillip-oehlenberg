@@ -1,16 +1,25 @@
 import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
+import { iconSets } from "@/lib/resume-data";
 import Image from "next/image";
 import Link from "next/link";
+import IconContainer from "@/components/IconContainer";
 
 export default function Profile({ onPageChange }) {
-  onPageChange("profile");
+  useEffect(() => {
+    onPageChange("profile");
+  });
+
+  const interestsAppsIcons = iconSets.filter(
+    (iconSet) => iconSet.title === "Interests"
+  )[0];
 
   return (
     <ProfileContainer>
       <IconWrapper>
         <Image src="/Icon_Profile.svg" fill alt="icon_profile" />
       </IconWrapper>
-      <HeadlineProfile>That&apos;s Me</HeadlineProfile>
+      <HeadlineProfile>THAT&apos;S ME</HeadlineProfile>
       <ImageWrapper>
         <Image src="/profile.jpg" fill alt="profile_picture" />
       </ImageWrapper>
@@ -40,6 +49,11 @@ export default function Profile({ onPageChange }) {
         Excited to collaborate? Drop me a message, and let&apos;s make some
         design magic together.
       </TextProfile>
+
+      <Icons>
+        <IconContainer iconSet={interestsAppsIcons} />
+      </Icons>
+
       <StyledLink href="/cv">Go to CV &gt;&gt;&gt;</StyledLink>
     </ProfileContainer>
   );
@@ -75,7 +89,7 @@ const ProfileContainer = styled.main`
   margin-bottom: 7rem;
   display: grid;
   grid-template-columns: minmax(min(65vw, 300px), 1fr) 1fr;
-  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto;
+  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto;
   gap: 4vw;
 `;
 
@@ -120,7 +134,7 @@ const FillerProfile = styled.div`
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   background: repeating-linear-gradient(
-    45deg,
+    -45deg,
     #000 0px,
     #000 15px,
     #fff 15px,
@@ -133,12 +147,20 @@ const TextProfile = styled.p`
   justify-self: center;
   line-height: 1.4;
   color: #fff;
-  width: 90%;
+  width: 92vw;
   padding: 16px;
   grid-column: 1 / 3;
   grid-row: 4 / 5;
   background-color: #000;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
+`;
+
+const Icons = styled.div`
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 92vw;
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
 `;
 
 const StyledLink = styled(Link)`
@@ -152,5 +174,5 @@ const StyledLink = styled(Link)`
   animation-duration: 1s;
   animation-iteration-count: infinite;
   grid-column: 1 / 3;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
 `;

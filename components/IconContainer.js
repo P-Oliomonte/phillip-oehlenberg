@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function IconContainer({ iconSet }) {
   return (
-    <>
+    <div>
       <IconContainerHeadline>{iconSet.title}</IconContainerHeadline>
 
       <MainContainer>
@@ -18,7 +18,7 @@ export default function IconContainer({ iconSet }) {
           );
         })}
       </MainContainer>
-    </>
+    </div>
   );
 }
 
@@ -27,7 +27,6 @@ const IconContainerHeadline = styled.h2`
   color: #fff;
   background-color: #000;
   box-shadow: 8px 8px #000;
-
   padding: 10px;
   padding-left: 12px;
   padding-right: 12px;
@@ -46,7 +45,7 @@ const MainContainer = styled.section`
   gap: 20px;
   padding: 12px;
   padding-bottom: 20px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 `;
 
 const IconCard = styled.div`
