@@ -1,4 +1,10 @@
-import { workExperiences, education, school, iconSets } from "@/lib/resume";
+import {
+  workExperiences,
+  education,
+  school,
+  iconSets,
+} from "@/lib/resume-data";
+import { useEffect } from "react";
 import ResumeCategory from "@/components/ResumeCategory";
 import IconContainer from "@/components/IconContainer";
 import styled, { keyframes } from "styled-components";
@@ -6,7 +12,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function CV({ onPageChange }) {
-  onPageChange("cv");
+  useEffect(() => {
+    onPageChange("cv");
+  });
 
   const languageIcons = iconSets.filter(
     (iconSet) => iconSet.title === "Languages"

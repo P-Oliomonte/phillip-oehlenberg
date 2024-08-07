@@ -1,5 +1,9 @@
+import { useEffect } from "react";
+
 export default function Contact({ onPageChange }) {
-  onPageChange("contact");
+  useEffect(() => {
+    onPageChange("contact");
+  });
 
   return (
     <main>

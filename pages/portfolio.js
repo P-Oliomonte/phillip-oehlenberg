@@ -1,17 +1,32 @@
 import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { webPortfolios } from "@/lib/portfolio-data";
+import WebPortfolio from "@/components/WebPortfolio";
 
 export default function Portfolio({ onPageChange }) {
-  onPageChange("portfolio");
+  useEffect(() => {
+    onPageChange("portfolio");
+  });
+
+  const webPortfolioApps = webPortfolios.filter(
+    (webPortfolio) => webPortfolio.title === "Apps"
+  )[0];
+
+  const webPortfolioPractices = webPortfolios.filter(
+    (webPortfolio) => webPortfolio.title === "Practices"
+  )[0];
 
   return (
-    <CvContainer>
+    <PortfolioContainer>
       <IconWrapper>
         <Image src="/Icon_Portfolio.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineProfile>PORTFOLIO</HeadlineProfile>
-    </CvContainer>
+
+      <WebPortfolio data={webPortfolioApps} />
+      <WebPortfolio data={webPortfolioPractices} />
+    </PortfolioContainer>
   );
 }
 
@@ -36,7 +51,7 @@ const breatheAnimation = keyframes`
 100% {letter-spacing: 0;}
 `;
 
-const CvContainer = styled.main`
+const PortfolioContainer = styled.main`
   position: relative;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;

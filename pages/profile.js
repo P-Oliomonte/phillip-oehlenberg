@@ -1,11 +1,14 @@
 import styled, { keyframes } from "styled-components";
-import { iconSets } from "@/lib/resume";
+import { useEffect } from "react";
+import { iconSets } from "@/lib/resume-data";
 import Image from "next/image";
 import Link from "next/link";
 import IconContainer from "@/components/IconContainer";
 
 export default function Profile({ onPageChange }) {
-  onPageChange("profile");
+  useEffect(() => {
+    onPageChange("profile");
+  });
 
   const interestsAppsIcons = iconSets.filter(
     (iconSet) => iconSet.title === "Interests"
