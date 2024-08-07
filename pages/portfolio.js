@@ -24,8 +24,10 @@ export default function Portfolio({ onPageChange }) {
       </IconWrapper>
       <HeadlineProfile>PORTFOLIO</HeadlineProfile>
 
-      <WebPortfolio data={webPortfolioApps} />
-      <WebPortfolio data={webPortfolioPractices} />
+      <WebPortfolioContainer>
+        <WebPortfolio data={webPortfolioApps} />
+        <WebPortfolio data={webPortfolioPractices} />
+      </WebPortfolioContainer>
     </PortfolioContainer>
   );
 }
@@ -89,4 +91,12 @@ const HeadlineProfile = styled.h1`
   text-align: center;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
+`;
+
+const WebPortfolioContainer = styled.div`
+  margin: 0 auto;
+  width: 92vw;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  padding-top: 40px;
 `;

@@ -19,7 +19,7 @@ export default function Home({ onPageChange }) {
 
   return (
     <main>
-      <HeaderContainer>
+      <HomeContainer>
         <ImageWrapper>
           <Image
             src={imageSrc}
@@ -34,7 +34,7 @@ export default function Home({ onPageChange }) {
           NICE TO MEET YOU!
         </Headline>
         <StyledLink href="/profile">Go to Profile &gt;&gt;&gt;</StyledLink>
-      </HeaderContainer>
+      </HomeContainer>
     </main>
   );
 }
@@ -50,7 +50,7 @@ const contentAnimation = keyframes`
 100% { top: 0; opacity: 1; }
 `;
 
-const HeaderContainer = styled.div`
+const HomeContainer = styled.div`
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -59,7 +59,7 @@ const HeaderContainer = styled.div`
   margin-bottom: 7rem;
   position: static;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   grid-gap: 1.2rem;
   align-items: center;
   justify-items: center;
@@ -93,8 +93,7 @@ const HeadlineHighlight = styled.span`
 `;
 
 const StyledLink = styled(Link)`
-  position: relative;
-  top: 2.5rem;
+  padding-top: 2rem;
   font-size: min(4.5vw, 1.5rem);
   font-weight: 500;
   text-decoration: none;
@@ -102,4 +101,5 @@ const StyledLink = styled(Link)`
   animation-name: ${breatheAnimation};
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  grid-row: 3 / 4;
 `;

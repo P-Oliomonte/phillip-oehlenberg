@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function WebPortfolio({ data }) {
   return (
@@ -10,10 +10,7 @@ export default function WebPortfolio({ data }) {
           return (
             <PortfolioCard key={project.name}>
               <ProjectName>{project.name}</ProjectName>
-              <ProjectRole>
-                <strong>Role: </strong>
-                {project.role}
-              </ProjectRole>
+
               <ProjectTechStack>
                 {project.techStack.map((projectTech) => {
                   return (
@@ -21,12 +18,39 @@ export default function WebPortfolio({ data }) {
                   );
                 })}
               </ProjectTechStack>
-
+              <ProjectRole>
+                <strong>Role: </strong>
+                {project.role}
+              </ProjectRole>
               <ProjectDescription>{project.description}</ProjectDescription>
               <ProjectLinks>
-                <ProjectLink>Website</ProjectLink>
+                <ProjectLinkWebsite
+                  href={project.link}
+                  alt={`Link to ${project.name}`}
+                  target="blank"
+                >
+                  <Image
+                    src="/Icon_Globe.svg"
+                    height="18"
+                    width="18"
+                    alt="Icon GitHub"
+                  />
+                  <LinkText>Go to Website</LinkText>
+                </ProjectLinkWebsite>
 
-                <ProjectLink>GitHub Repo</ProjectLink>
+                <ProjectLinkGitHub
+                  href={project.repository}
+                  alt={`Link to GitHub repository of ${project.name}`}
+                  target="blank"
+                >
+                  <Image
+                    src="/Icon_GitHub.svg"
+                    height="18"
+                    width="18"
+                    alt="Icon GitHub"
+                  />
+                  <LinkText>GitHub Repo</LinkText>
+                </ProjectLinkGitHub>
               </ProjectLinks>
             </PortfolioCard>
           );
@@ -73,6 +97,7 @@ const ProjectName = styled.h3`
 `;
 
 const ProjectTechStack = styled.div`
+  padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 12px;
   padding-right: 12px;
@@ -99,7 +124,6 @@ const ProjectRole = styled.p`
   line-height: 1.4;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 8px;
   padding-bottom: 8px;
 `;
 
@@ -108,12 +132,12 @@ const ProjectDescription = styled.p`
   line-height: 1.4;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 12px;
+  padding-top: 6px;
   padding-bottom: 10px;
-  border-top: 2px dotted #000;
 `;
 
 const ProjectLinks = styled.div`
+  padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 12px;
   padding-right: 12px;
@@ -122,7 +146,41 @@ const ProjectLinks = styled.div`
   gap: 12px;
 `;
 
-const ProjectLink = styled(Link)`
+const ProjectLinkWebsite = styled.a`
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 6px;
   color: #fff;
   background-color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 2px solid #000;
+  border-radius: 8px;
+`;
+
+const ProjectLinkGitHub = styled.a`
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 6px;
+  color: #000;
+  background-color: #fff;
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 2px solid #000;
+  border-radius: 8px;
+`;
+
+const LinkText = styled.h5`
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: 500;
 `;
