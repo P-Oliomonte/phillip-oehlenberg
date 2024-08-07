@@ -33,7 +33,7 @@ export default function CV({ onPageChange }) {
       <IconWrapper>
         <Image src="/Icon_CV.svg" fill alt="icon_profile" />
       </IconWrapper>
-      <HeadlineProfile>CV</HeadlineProfile>
+      <HeadlineCV>CV</HeadlineCV>
 
       <Icons>
         <IconContainer iconSet={languageIcons} />
@@ -99,7 +99,7 @@ const IconWrapper = styled.div`
   grid-row: 1 / 2;
 `;
 
-const HeadlineProfile = styled.h1`
+const HeadlineCV = styled.h1`
   position: relative;
   animation-name: ${headlineAnimation};
   animation-duration: 0.5s;
