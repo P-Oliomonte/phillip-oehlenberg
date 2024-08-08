@@ -12,7 +12,7 @@ export default function Contact({ onPageChange }) {
       <IconWrapper>
         <Image src="/Icon_Contact.svg" fill alt="icon_profile" />
       </IconWrapper>
-      <HeadlineProfile>CONTACT</HeadlineProfile>
+      <HeadlineContact>CONTACT</HeadlineContact>
       <ContactIntro>
         If you are interested in working with me please feel free to contact me.
         I&apos;m looking forward to getting to know you.
@@ -105,7 +105,7 @@ const IconWrapper = styled.div`
   grid-row: 1 / 2;
 `;
 
-const HeadlineProfile = styled.h1`
+const HeadlineContact = styled.h1`
   position: relative;
   animation-name: ${headlineAnimation};
   animation-duration: 0.5s;
