@@ -61,7 +61,7 @@ export default function WebPortfolio({ data }) {
 }
 
 const PortfolioContainer = styled.section`
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 
   &:nth-last-of-type(1) {
     padding-bottom: 0;
@@ -74,8 +74,8 @@ const PortfolioTitle = styled.h2`
   padding: 10px;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  text-align: center;
 `;
 
 const PortfolioCard = styled.div`

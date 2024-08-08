@@ -110,7 +110,7 @@ const HeadlineProfile = styled.h1`
   animation-name: ${headlineAnimation};
   animation-duration: 0.5s;
   font-size: min(10vw, 2.5rem);
-  padding-bottom: 1.2em;
+  padding-bottom: 0.8em;
   padding-left: 4vw;
   padding-right: 4vw;
   text-align: center;

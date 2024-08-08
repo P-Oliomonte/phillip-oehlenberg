@@ -59,10 +59,9 @@ const StyledLink = styled(Link)`
   flex-grow: 1;
   transition: all 0.25s ease;
 
-  &:active {
+  &:hover {
     color: #fff;
     background-color: #000;
-    box-shadow: 8px 8px #000;
   }
 
   &:nth-of-type(1) {

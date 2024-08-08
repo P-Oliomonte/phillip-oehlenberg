@@ -18,24 +18,22 @@ export default function Home({ onPageChange }) {
   }, []);
 
   return (
-    <main>
-      <HomeContainer>
-        <ImageWrapper>
-          <Image
-            src={imageSrc}
-            alt="header-animation"
-            fill
-            priority
-            unoptimized
-          />
-        </ImageWrapper>
-        <Headline>
-          HEY THERE, <HeadlineHighlight>I&apos;M PHILLIP.</HeadlineHighlight>{" "}
-          NICE TO MEET YOU!
-        </Headline>
-        <StyledLink href="/profile">Go to Profile &gt;&gt;&gt;</StyledLink>
-      </HomeContainer>
-    </main>
+    <HomeContainer>
+      <ImageWrapper>
+        <Image
+          src={imageSrc}
+          alt="header-animation"
+          fill
+          priority
+          unoptimized
+        />
+      </ImageWrapper>
+      <Headline>
+        HEY THERE, <HeadlineHighlight>I&apos;M PHILLIP.</HeadlineHighlight> NICE
+        TO MEET YOU!
+      </Headline>
+      <StyledLink href="/profile">Go to Profile &gt;&gt;&gt;</StyledLink>
+    </HomeContainer>
   );
 }
 
@@ -50,7 +48,7 @@ const contentAnimation = keyframes`
 100% { top: 0; opacity: 1; }
 `;
 
-const HomeContainer = styled.div`
+const HomeContainer = styled.main`
   margin: 0 auto;
   left: 0;
   right: 0;
