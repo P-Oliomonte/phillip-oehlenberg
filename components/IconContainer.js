@@ -45,7 +45,6 @@ const MainContainer = styled.section`
   gap: 20px;
   padding: 12px;
   padding-bottom: 20px;
-  /* margin-bottom: 40px; */
 `;
 
 const IconCard = styled.div`

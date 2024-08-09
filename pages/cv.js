@@ -112,10 +112,6 @@ const HeadlineCV = styled.h1`
   grid-row: 2 / 3;
 `;
 
-const Space = styled.div`
-  height: 40px;
-`;
-
 const Icons = styled.div`
   display: flex;
   flex-direction: column;

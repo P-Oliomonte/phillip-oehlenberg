@@ -11,11 +11,11 @@ export default function Portfolio({ onPageChange }) {
   });
 
   const webPortfolioApps = webPortfolios.filter(
-    (webPortfolio) => webPortfolio.title === "Apps"
+    (webPortfolio) => webPortfolio.title === "APPS"
   )[0];
 
   const webPortfolioPractices = webPortfolios.filter(
-    (webPortfolio) => webPortfolio.title === "Practices"
+    (webPortfolio) => webPortfolio.title === "PRACTICES"
   )[0];
 
   return (

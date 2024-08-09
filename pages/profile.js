@@ -4,6 +4,7 @@ import { iconSets } from "@/lib/resume-data";
 import Image from "next/image";
 import Link from "next/link";
 import IconContainer from "@/components/IconContainer";
+import SoftSkills from "@/components/SoftSkills";
 
 export default function Profile({ onPageChange }) {
   useEffect(() => {
@@ -21,38 +22,50 @@ export default function Profile({ onPageChange }) {
       </IconWrapper>
       <HeadlineProfile>THAT&apos;S ME</HeadlineProfile>
       <ImageWrapper>
-        <Image src="/profile.jpg" fill alt="profile_picture" />
+        <Image src="/profile.jpg" fill alt="profile_picture" priority />
       </ImageWrapper>
       <FillerProfile />
       <TextProfile>
-        I&apos;m a seasoned graphic designer calling Hamburg my home. I have
-        over a dozen years of professional experience in the design field.
-        Before that, I&apos;ve crafted my skills in the academic hubs of Cologne
-        and the creative whirlwind of London.
+        I&apos;m a freshly trained Frontend Web Developer and seasoned graphic
+        designer based in Hamburg, with over a dozen years of professional
+        experience in the design field. My journey began in the academic hubs of
+        Cologne and the creative whirlwind of London, where I honed my design
+        skills.
         <br />
         <br />
-        I&apos;m currently delving into the world of web development to expand
-        my creative toolkit and add some extra sprinkles to my portfolio.
+        Currently, I&apos;m expanding my expertise by diving deep into Frontend
+        Web Development. This blend of web development and graphic design allows
+        me to craft visually stunning and user-friendly digital experiences.
+        This combination makes me a strong for roles in frontend development,
+        where both design aesthetics and technical precision are crucial.
         <br />
         <br />
-        My design spectrum? It&apos;s as varied as the cityscape at
-        sunset—ranging from sleek and professional to whimsically playful.
-        Whether it&apos;s pixels or paper, I&apos;ve got you covered with a keen
-        eye for detail and a knack for bringing ideas to life.
+        Whether it&apos;s coding a responsive website or creating eye-catching
+        graphics, I bring a keen eye for detail and a passion for bringing ideas
+        to life.
         <br />
         <br />
-        When it comes to work, I&apos;m reliable, conscientious, and always up
-        for a chat. Because let&apos;s be real, good design is not just about
-        visuals—it&apos;s about building connections.
+        In my work, I&apos;m reliable, detail-oriented, and dedicated to
+        delivering quality results. Because great web development isn&apos;t
+        just about clean code—it&apos;s about creating seamless, user-friendly
+        experiences.
         <br />
         <br />
-        Excited to collaborate? Drop me a message, and let&apos;s make some
-        design magic together.
+        Excited to collaborate? Drop me a message, and let&apos;s create some
+        digital magic together.
       </TextProfile>
+
+      <StripedFillerContainer>
+        <StripedFiller />
+      </StripedFillerContainer>
 
       <Icons>
         <IconContainer iconSet={interestsAppsIcons} />
       </Icons>
+
+      <SoftSkillsContainer>
+        <SoftSkills />
+      </SoftSkillsContainer>
 
       <StyledLink href="/cv">Go to CV &gt;&gt;&gt;</StyledLink>
     </ProfileContainer>
@@ -89,7 +102,7 @@ const ProfileContainer = styled.main`
   margin-bottom: 7rem;
   display: grid;
   grid-template-columns: minmax(min(65vw, 300px), 1fr) 1fr;
-  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto;
+  grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto auto auto;
   gap: 4vw;
 `;
 
@@ -143,9 +156,9 @@ const FillerProfile = styled.div`
 `;
 
 const TextProfile = styled.p`
-  font-size: 0.9rem;
+  font-size: 1rem;
   justify-self: center;
-  line-height: 1.4;
+  line-height: 1.6;
   color: #fff;
   width: 92vw;
   padding: 16px;
@@ -155,12 +168,37 @@ const TextProfile = styled.p`
   border-radius: 0 0 8px 8px;
 `;
 
+const StripedFillerContainer = styled.div`
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
+  padding-top: 40px;
+`;
+
+const StripedFiller = styled.div`
+  height: 40px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #000 0px,
+    #000 15px,
+    #fff 15px,
+    #fff 30px
+  );
+`;
+
+const SoftSkillsContainer = styled.div`
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 92vw;
+  grid-column: 1 / 3;
+  grid-row: 6 / 7;
+`;
+
 const Icons = styled.div`
   padding-top: 40px;
   margin: 0 auto;
   width: 92vw;
   grid-column: 1 / 3;
-  grid-row: 5 / 6;
+  grid-row: 7 / 8;
 `;
 
 const StyledLink = styled(Link)`
@@ -174,5 +212,5 @@ const StyledLink = styled(Link)`
   animation-duration: 1s;
   animation-iteration-count: infinite;
   grid-column: 1 / 3;
-  grid-row: 6 / 7;
+  grid-row: 8 / 9;
 `;
