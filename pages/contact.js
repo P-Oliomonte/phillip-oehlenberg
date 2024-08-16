@@ -1,12 +1,7 @@
-import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
 export default function Contact({ onPageChange }) {
-  useEffect(() => {
-    onPageChange("contact");
-  });
-
   return (
     <ContactContainer>
       <IconWrapper>

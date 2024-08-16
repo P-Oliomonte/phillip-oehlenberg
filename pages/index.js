@@ -4,10 +4,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Home({ onPageChange }) {
-  useEffect(() => {
-    onPageChange("home");
-  });
-
   const [imageSrc, setImageSrc] = useState(
     "/logo_icon_ani_complete_small.webp"
   );

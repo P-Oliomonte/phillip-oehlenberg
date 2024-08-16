@@ -1,15 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { webPortfolios } from "@/lib/portfolio-data";
 import WebPortfolio from "@/components/WebPortfolio";
 
 export default function Portfolio({ onPageChange }) {
-  useEffect(() => {
-    onPageChange("portfolio");
-  });
-
   const webPortfolioApps = webPortfolios.filter(
     (webPortfolio) => webPortfolio.title === "APPS"
   )[0];

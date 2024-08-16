@@ -1,27 +1,33 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 export default function Layout({ children, page }) {
+  const router = useRouter();
+
   return (
     <>
       <StyledNavigation>
-        <StyledLink href="/" $isActive={page === "home"}>
+        <StyledLink href="/" $isActive={router.pathname === "/"}>
           HOME
         </StyledLink>
 
-        <StyledLink href="/profile" $isActive={page === "profile"}>
+        <StyledLink href="/profile" $isActive={router.pathname === "/profile"}>
           PROFILE
         </StyledLink>
 
-        <StyledLink href="/cv" $isActive={page === "cv"}>
+        <StyledLink href="/cv" $isActive={router.pathname === "/cv"}>
           CV
         </StyledLink>
 
-        <StyledLink href="/portfolio" $isActive={page === "portfolio"}>
+        <StyledLink
+          href="/portfolio"
+          $isActive={router.pathname === "/portfolio"}
+        >
           PORTFOLIO
         </StyledLink>
 
-        <StyledLink href="/contact" $isActive={page === "contact"}>
+        <StyledLink href="/contact" $isActive={router.pathname === "/contact"}>
           CONTACT
         </StyledLink>
       </StyledNavigation>
