@@ -2,9 +2,9 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { webPortfolios } from "@/lib/portfolio-data";
-import WebPortfolio from "@/components/WebPortfolio";
+import WebPortfolioList from "@/components/WebPortfolioList";
 
-export default function Portfolio({ onPageChange }) {
+export default function WebPortfolio({ onPageChange }) {
   const webPortfolioApps = webPortfolios.filter(
     (webPortfolio) => webPortfolio.title === "APPS"
   )[0];
@@ -16,16 +16,18 @@ export default function Portfolio({ onPageChange }) {
   return (
     <PortfolioContainer>
       <IconWrapper>
-        <Image src="/Icon_Portfolio.svg" fill alt="icon_profile" />
+        <Image src="/Icon_Portfolio_Web_Dev.svg" fill alt="icon_profile" />
       </IconWrapper>
-      <HeadlineProfile>PORTFOLIO</HeadlineProfile>
+      <HeadlineProfile>WEB DEVELOPMENT</HeadlineProfile>
 
       <WebPortfolioContainer>
-        <WebPortfolio data={webPortfolioApps} />
-        <WebPortfolio data={webPortfolioPractices} />
+        <WebPortfolioList data={webPortfolioApps} />
+        <WebPortfolioList data={webPortfolioPractices} />
       </WebPortfolioContainer>
 
-      <StyledLink href="/contact">Contact me &gt;&gt;&gt;</StyledLink>
+      <StyledLink href="/graphic-portfolio">
+        Graphic Design Portfolio &gt;&gt;&gt;
+      </StyledLink>
     </PortfolioContainer>
   );
 }
