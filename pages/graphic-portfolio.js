@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { webPortfolios } from "@/lib/portfolio-data";
 
 export default function GraphicPortfolio({ onPageChange }) {
   return (
