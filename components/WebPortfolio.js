@@ -10,7 +10,15 @@ export default function WebPortfolio({ data }) {
           return (
             <PortfolioCard key={project.name}>
               <ProjectName>{project.name}</ProjectName>
-
+              {project.thumbnail !== "" && (
+                <ImageContainer>
+                  <StyledImage
+                    src={project.thumbnail}
+                    fill
+                    alt={project.thumbnail}
+                  />
+                </ImageContainer>
+              )}
               <ProjectTechStack>
                 {project.techStack.map((projectTech) => {
                   return (
@@ -94,6 +102,17 @@ const ProjectName = styled.h3`
   padding-bottom: 8px;
   padding-left: 12px;
   padding-right: 12px;
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: 200px;
+  width: 100%;
+`;
+
+const StyledImage = styled(Image)`
+  padding: 20px;
+  object-fit: contain;
 `;
 
 const ProjectTechStack = styled.div`
