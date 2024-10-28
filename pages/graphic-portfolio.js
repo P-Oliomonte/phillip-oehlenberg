@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function GraphicPortfolio({ onPageChange }) {
+export default function GraphicPortfolio() {
   return (
     <PortfolioContainer>
       <IconWrapper>
@@ -22,6 +22,17 @@ export default function GraphicPortfolio({ onPageChange }) {
     </PortfolioContainer>
   );
 }
+
+const ItemWrapper = styled.div`
+  padding: 10px;
+`;
+
+const Item = styled.div`
+  width: 100%;
+  height: 100px;
+  border: 1px solid red;
+  background-color: #000;
+`;
 
 const iconAnimation = keyframes`
 0% { top: -20vw; opacity: 0;}

@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="format-detection" content="telephone=no" />
       </Head>
-      <Layout page={page} onPageChange={handlePageChange}>
-        <Component {...pageProps} onPageChange={handlePageChange} />
+      <Layout page={page}>
+        <Component {...pageProps} />
       </Layout>
     </>
   );

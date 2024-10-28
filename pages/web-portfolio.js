@@ -4,7 +4,7 @@ import Link from "next/link";
 import { webPortfolios } from "@/lib/portfolio-data";
 import WebPortfolioList from "@/components/WebPortfolioList";
 
-export default function WebPortfolio({ onPageChange }) {
+export default function WebPortfolio() {
   const webPortfolioApps = webPortfolios.filter(
     (webPortfolio) => webPortfolio.title === "APPS"
   )[0];
