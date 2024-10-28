@@ -97,13 +97,13 @@ const ProjectName = styled.h3`
 `;
 
 const ProjectTechStack = styled.div`
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 12px;
-  padding-right: 12px;
   display: flex;
   justify-content: flex-start;
-  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px 6px;
 `;
 
 const ProjectTech = styled.h4`
@@ -112,10 +112,7 @@ const ProjectTech = styled.h4`
   background-color: #000;
   font-size: 0.8rem;
   font-weight: 500;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 6px 10px;
   border-radius: 8px;
 `;
 

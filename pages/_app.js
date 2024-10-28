@@ -8,6 +8,10 @@ export default function App({ Component, pageProps }) {
     defaultValue: "home",
   });
 
+  function handlePageChange(page) {
+    setPage(page);
+  }
+
   return (
     <>
       <Head>
