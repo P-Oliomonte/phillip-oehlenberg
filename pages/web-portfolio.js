@@ -16,7 +16,11 @@ export default function WebPortfolio() {
   return (
     <PortfolioContainer>
       <IconWrapper>
-        <Image src="/Icon_Portfolio_Web_Dev.svg" fill alt="icon_profile" />
+        <Image
+          src="/Icons/Icon_Portfolio_Web_Dev.svg"
+          fill
+          alt="icon_profile"
+        />
       </IconWrapper>
       <HeadlineProfile>WEB DEVELOPMENT</HeadlineProfile>
 

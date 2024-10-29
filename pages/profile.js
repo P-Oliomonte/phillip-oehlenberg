@@ -13,7 +13,7 @@ export default function Profile({ onPageChange }) {
   return (
     <ProfileContainer>
       <IconWrapper>
-        <Image src="/Icon_Profile.svg" fill alt="icon_profile" />
+        <Image src="/Icons/Icon_Profile.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineProfile>THAT&apos;S ME</HeadlineProfile>
       <ImageWrapper>

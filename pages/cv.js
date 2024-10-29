@@ -26,7 +26,7 @@ export default function CV({ onPageChange }) {
   return (
     <CvContainer>
       <IconWrapper>
-        <Image src="/Icon_CV.svg" fill alt="icon_profile" />
+        <Image src="/Icons/Icon_CV.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineCV>CV</HeadlineCV>
 

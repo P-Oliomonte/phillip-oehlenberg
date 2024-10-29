@@ -38,7 +38,7 @@ export default function WebPortfolioList({ data }) {
                   target="blank"
                 >
                   <Image
-                    src="/Icon_Globe.svg"
+                    src="/Icons/Icon_Globe.svg"
                     height="18"
                     width="18"
                     alt="Icon GitHub"
@@ -52,7 +52,7 @@ export default function WebPortfolioList({ data }) {
                   target="blank"
                 >
                   <Image
-                    src="/Icon_GitHub.svg"
+                    src="/Icons/Icon_GitHub.svg"
                     height="18"
                     width="18"
                     alt="Icon GitHub"

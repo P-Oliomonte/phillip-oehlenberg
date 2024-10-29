@@ -1,20 +1,26 @@
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { illustrationImagesData } from "@/lib/images-data";
 
 export default function GraphicPortfolio() {
+  console.log("Illustration Images Data: ", illustrationImagesData);
+
   return (
     <PortfolioContainer>
       <IconWrapper>
         <Image
-          src="/Icon_Portfolio_Graphic_Design.svg"
+          src="/Icons/Icon_Portfolio_Graphic_Design.svg"
           fill
           alt="icon_profile"
         />
       </IconWrapper>
       <HeadlineProfile>GRAPHIC DESIGN</HeadlineProfile>
 
-      <GraphicPortfolioContainer></GraphicPortfolioContainer>
+      <GraphicPortfolioContainer>
+        <PortfolioCarousel images={illustrationImagesData} />
+      </GraphicPortfolioContainer>
 
       <StyledLink href="/web-portfolio">
         Web Development Portfolio &gt;&gt;&gt;
@@ -22,17 +28,6 @@ export default function GraphicPortfolio() {
     </PortfolioContainer>
   );
 }
-
-const ItemWrapper = styled.div`
-  padding: 10px;
-`;
-
-const Item = styled.div`
-  width: 100%;
-  height: 100px;
-  border: 1px solid red;
-  background-color: #000;
-`;
 
 const iconAnimation = keyframes`
 0% { top: -20vw; opacity: 0;}
@@ -62,8 +57,8 @@ const PortfolioContainer = styled.main`
   margin: 0 auto;
   margin-top: 7rem;
   margin-bottom: 7rem;
-  padding-left: 4vw;
-  padding-right: 4vw;
+  /* padding-left: 4vw;
+  padding-right: 4vw; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto;
@@ -97,7 +92,7 @@ const HeadlineProfile = styled.h1`
 
 const GraphicPortfolioContainer = styled.div`
   margin: 0 auto;
-  width: 92vw;
+  width: 100vw;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;
