@@ -2,11 +2,9 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import { illustrationImagesData } from "@/lib/images-data";
+import { illustrationImagesData, webDesignImagesData } from "@/lib/images-data";
 
 export default function GraphicPortfolio() {
-  console.log("Illustration Images Data: ", illustrationImagesData);
-
   return (
     <PortfolioContainer>
       <IconWrapper>
@@ -19,7 +17,12 @@ export default function GraphicPortfolio() {
       <HeadlineProfile>GRAPHIC DESIGN</HeadlineProfile>
 
       <GraphicPortfolioContainer>
-        <PortfolioCarousel images={illustrationImagesData} />
+        <PortfolioCarousel images={webDesignImagesData} title="Web Design" />
+        <Filler />
+        <PortfolioCarousel
+          images={illustrationImagesData}
+          title="Illstrations"
+        />
       </GraphicPortfolioContainer>
 
       <StyledLink href="/web-portfolio">
@@ -57,8 +60,6 @@ const PortfolioContainer = styled.main`
   margin: 0 auto;
   margin-top: 7rem;
   margin-bottom: 7rem;
-  /* padding-left: 4vw;
-  padding-right: 4vw; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto;
@@ -95,6 +96,11 @@ const GraphicPortfolioContainer = styled.div`
   width: 100vw;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+`;
+
+const Filler = styled.div`
+  height: 60px;
+  background-color: #fff;
 `;
 
 const StyledLink = styled(Link)`
