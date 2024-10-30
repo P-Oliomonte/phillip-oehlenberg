@@ -2,9 +2,15 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import { illustrationImagesData, webDesignImagesData } from "@/lib/images-data";
+import {
+  illustrationImagesData,
+  webDesignImagesData,
+  printImagesData,
+  logoImagesData,
+  packegingImagesData,
+} from "@/lib/images-data";
 
-export default function GraphicPortfolio() {
+export default function GraphicPortfolio({ handleshowLargeImage }) {
   return (
     <PortfolioContainer>
       <IconWrapper>
@@ -17,11 +23,34 @@ export default function GraphicPortfolio() {
       <HeadlineProfile>GRAPHIC DESIGN</HeadlineProfile>
 
       <GraphicPortfolioContainer>
-        <PortfolioCarousel images={webDesignImagesData} title="Web Design" />
+        <PortfolioCarousel
+          images={webDesignImagesData}
+          title="Web Design"
+          onShowLargeImage={handleshowLargeImage}
+        />
+        <Filler />
+        <PortfolioCarousel
+          images={printImagesData}
+          title="Print Design"
+          onShowLargeImage={handleshowLargeImage}
+        />
         <Filler />
         <PortfolioCarousel
           images={illustrationImagesData}
           title="Illstrations"
+          onShowLargeImage={handleshowLargeImage}
+        />
+        <Filler />
+        <PortfolioCarousel
+          images={logoImagesData}
+          title="Logos"
+          onShowLargeImage={handleshowLargeImage}
+        />
+        <Filler />
+        <PortfolioCarousel
+          images={packegingImagesData}
+          title="Packaging"
+          onShowLargeImage={handleshowLargeImage}
         />
       </GraphicPortfolioContainer>
 

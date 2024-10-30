@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import IconRight from "@/public/Icons/Icon_Right.svg";
 import IconLeft from "@/public/Icons/Icon_Left.svg";
 
-export default function PortfolioCarousel({ images, title }) {
+export default function PortfolioCarousel({ images, title, onShowLargeImage }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000 }),
   ]);
@@ -26,7 +26,11 @@ export default function PortfolioCarousel({ images, title }) {
         <ScrollBody>
           {images.map((image) => (
             <Slide key={image.imageId}>
-              <StyledImage src={image.imageUrl} alt={image.alt} />
+              <StyledImage
+                src={image.imageUrl}
+                alt={image.alt}
+                onClick={() => onShowLargeImage(image)}
+              />
             </Slide>
           ))}
         </ScrollBody>
@@ -60,10 +64,12 @@ const ScrollBody = styled.div`
   cursor: grab;
 `;
 
-const Slide = styled.div`
+const Slide = styled.button`
+  border: none;
+  background-color: #000;
   position: relative;
   margin-left: 20px;
-  height: 200px;
+  height: 220px;
 
   @media (min-width: 600px) {
     height: 300px;
@@ -84,6 +90,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  pointer-events: none;
 `;
 
 const StyledRoundButton = styled.button`
@@ -96,6 +103,7 @@ const StyledRoundButton = styled.button`
   height: 30px;
   cursor: pointer;
   padding: 6px;
+  pointer-events: auto;
 `;
 
 const CategoryTitle = styled.h2`
