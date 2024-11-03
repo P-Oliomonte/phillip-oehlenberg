@@ -6,6 +6,8 @@ export default function Layout({
   showLargeImage,
   handleshowLargeImage,
   largeImage,
+  handleNextImage,
+  handlePrevImage,
 }) {
   return (
     <>
@@ -13,6 +15,8 @@ export default function Layout({
         <ImageModal
           largeImage={largeImage}
           onShowLargeImage={handleshowLargeImage}
+          onNextImage={handleNextImage}
+          onPrevImage={handlePrevImage}
         />
       )}
       <Navigation />

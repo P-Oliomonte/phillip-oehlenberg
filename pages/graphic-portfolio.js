@@ -2,15 +2,15 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import {
+
+export default function GraphicPortfolio({
+  handleshowLargeImage,
   illustrationImagesData,
   webDesignImagesData,
   printImagesData,
   logoImagesData,
   packegingImagesData,
-} from "@/lib/images-data";
-
-export default function GraphicPortfolio({ handleshowLargeImage }) {
+}) {
   return (
     <PortfolioContainer>
       <IconWrapper>
