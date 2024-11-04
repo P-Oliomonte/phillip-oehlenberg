@@ -37,7 +37,8 @@ export default function App({ Component, pageProps }) {
     };
   }, [showLargeImage]);
 
-  function handleNextImage(largeImage) {
+  function handleNextImage(event, largeImage) {
+    event.stopPropagation();
     const currentCategory = largeImage.imageId.includes("Illustration")
       ? illustrationImagesData
       : largeImage.imageId.includes("WebDesign")
@@ -55,7 +56,9 @@ export default function App({ Component, pageProps }) {
     setLargeImage(currentCategory[nextIndex]);
   }
 
-  function handlePrevImage(largeImage) {
+  function handlePrevImage(event, largeImage) {
+    event.stopPropagation();
+
     const currentCategory = largeImage.imageId.includes("Illustration")
       ? illustrationImagesData
       : largeImage.imageId.includes("WebDesign")

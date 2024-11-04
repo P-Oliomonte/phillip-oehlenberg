@@ -9,15 +9,6 @@ export default function ImageModal({
   onNextImage,
   onPrevImage,
 }) {
-  function handleNextImageClick(event) {
-    event.stopPropagation();
-    onNextImage(largeImage);
-  }
-
-  function handlePrevImageClick(event) {
-    event.stopPropagation();
-    onPrevImage(largeImage);
-  }
   return (
     <Overlay onClick={onShowLargeImage}>
       <ImageWrapper>
@@ -33,13 +24,13 @@ export default function ImageModal({
         <StyledImageTitle>{largeImage.imageTitle}</StyledImageTitle>
         <ButtonContainer>
           <StyledRoundButton
-            onClick={(event) => handlePrevImageClick(event, largeImage)}
+            onClick={(event) => onPrevImage(event, largeImage)}
           >
             {" "}
             <IconLeft />
           </StyledRoundButton>
           <StyledRoundButton
-            onClick={(event) => handleNextImageClick(event, largeImage)}
+            onClick={(event) => onNextImage(event, largeImage)}
           >
             <IconRight />
           </StyledRoundButton>
