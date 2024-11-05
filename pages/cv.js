@@ -69,8 +69,10 @@ const breatheAnimation = keyframes`
 100% {letter-spacing: 0;}
 `;
 
-const CvContainer = styled.main`
+const CvContainer = styled.section`
   position: relative;
+  width: 92vw;
+  max-width: 1104px;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;
@@ -112,8 +114,8 @@ const Icons = styled.div`
   flex-direction: column;
   gap: 40px;
   padding-bottom: 40px;
+  width: 100%;
   margin: 0 auto;
-  width: 92vw;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;

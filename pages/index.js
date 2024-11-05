@@ -44,15 +44,15 @@ const contentAnimation = keyframes`
 100% { top: 0; opacity: 1; }
 `;
 
-const HomeContainer = styled.main`
+const HomeContainer = styled.section`
   margin: 0 auto;
-  left: 0;
-  right: 0;
   width: 92vw;
+  max-width: 1104px;
   margin-top: 7rem;
   margin-bottom: 7rem;
   position: static;
   display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
   grid-template-rows: auto auto auto;
   grid-gap: 1.2rem;
   align-items: center;
@@ -65,7 +65,12 @@ const ImageWrapper = styled.div`
   height: 92vw;
   max-width: 420px;
   max-height: 420px;
+  grid-column: 1 / 3;
   grid-row: 1 / 2;
+
+  @media screen and (min-width: 1200px) {
+    grid-column: 1 / 2;
+  }
 `;
 
 const Headline = styled.h1`
@@ -78,7 +83,17 @@ const Headline = styled.h1`
   text-align: center;
   color: #000;
   padding-top: 0.2rem;
+  grid-column: 1 / 3;
   grid-row: 2 / 3;
+
+  @media screen and (min-width: 600px) {
+    font-size: 72px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 `;
 
 const HeadlineHighlight = styled.span`
@@ -95,5 +110,11 @@ const StyledLink = styled(Link)`
   animation-name: ${breatheAnimation};
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  grid-column: 1 / 3;
   grid-row: 3 / 4;
+
+  @media screen and (min-width: 1200px) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
 `;

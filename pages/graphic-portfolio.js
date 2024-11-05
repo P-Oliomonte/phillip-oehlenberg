@@ -92,11 +92,13 @@ const breatheAnimation = keyframes`
 100% {letter-spacing: 0;}
 `;
 
-const PortfolioContainer = styled.main`
+const PortfolioContainer = styled.section`
   position: relative;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;
+  width: 92vw;
+  max-width: 1104px;
   margin-top: 7rem;
   margin-bottom: 7rem;
   display: grid;
@@ -132,7 +134,7 @@ const HeadlineProfile = styled.h1`
 
 const GraphicPortfolioContainer = styled.div`
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;

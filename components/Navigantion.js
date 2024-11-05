@@ -65,6 +65,7 @@ export default function Navigation() {
 
 const StyledNavigation = styled.nav`
   width: 94vw;
+  max-width: 700px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -101,7 +102,7 @@ const StyledNavButton = styled.button`
     color: #fff;
     background-color: #000;
   }
-  @media (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     font-size: 0.95rem;
   }
 `;
@@ -140,7 +141,7 @@ const StyledSubMenuLink = styled(Link)`
     border-radius: 0 0 8px 8px;
   }
 
-  @media (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     font-size: 0.95rem;
   }
 `;
@@ -174,5 +175,7 @@ const StyledLink = styled(Link)`
     border-radius: 0 8px 8px 0;
   }
 
-  font-size: 0.95rem;
+  @media screen and (min-width: 600px) {
+    font-size: 0.95rem;
+  }
 `;

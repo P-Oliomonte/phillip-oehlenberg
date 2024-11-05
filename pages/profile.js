@@ -88,8 +88,10 @@ const contentAnimation = keyframes`
 100% { top: 0; opacity: 1; }
 `;
 
-const ProfileContainer = styled.main`
+const ProfileContainer = styled.section`
   position: relative;
+  width: 100vw;
+  max-width: 1104px;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;

@@ -71,8 +71,12 @@ const Slide = styled.button`
   margin-left: 20px;
   height: 220px;
 
-  @media (min-width: 600px) {
-    height: 300px;
+  @media screen and (min-width: 600px) {
+    height: 280px;
+  }
+
+  @media screen and (min-width: 800px) {
+    height: 340px;
   }
 `;
 
