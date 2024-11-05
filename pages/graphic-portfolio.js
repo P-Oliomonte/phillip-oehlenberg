@@ -54,9 +54,19 @@ export default function GraphicPortfolio({
         />
       </GraphicPortfolioContainer>
 
-      <StyledLink href="/web-portfolio">
-        Web Development Portfolio &gt;&gt;&gt;
-      </StyledLink>
+      <GraphicPortfolioLinkContainer>
+        <GraphicPortfolioIntro>
+          To see my full graphic design portfolio click the link below.
+        </GraphicPortfolioIntro>
+        <StyledGraphicPortfolioLink
+          href="https://phillip-oehlenberg.com/"
+          target="_blank"
+        >
+          Full Graphic Design Portfolio
+        </StyledGraphicPortfolioLink>
+      </GraphicPortfolioLinkContainer>
+
+      <StyledLink href="/contact">Contact &gt;&gt;&gt;</StyledLink>
     </PortfolioContainer>
   );
 }
@@ -143,5 +153,40 @@ const StyledLink = styled(Link)`
   animation-duration: 1s;
   animation-iteration-count: infinite;
   grid-column: 1 / 3;
+  grid-row: 5 / 6;
+`;
+
+const GraphicPortfolioLinkContainer = styled.div`
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-column: 1 / 3;
   grid-row: 4 / 5;
+`;
+
+const GraphicPortfolioIntro = styled.p`
+  width: 100%;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-bottom: 20px;
+`;
+
+const StyledGraphicPortfolioLink = styled(Link)`
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 50%;
+  text-decoration: none;
+  text-align: center;
+  border: 3px solid #000;
+  border-radius: 8px;
+  padding: 10px;
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
 `;

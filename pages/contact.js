@@ -56,7 +56,7 @@ export default function Contact({ onPageChange }) {
           height={50}
           alt="Icon_Mail.svg"
         />
-        <ButtonText>SEND E-MAIL</ButtonText>
+        <p>SEND E-MAIL</p>
       </Mail>
     </ContactContainer>
   );
@@ -209,5 +209,3 @@ const Mail = styled.a`
   grid-column: 1 / 2;
   grid-row: 5 / 6;
 `;
-
-const ButtonText = styled.p``;
