@@ -5,7 +5,7 @@ export default function Contact({ onPageChange }) {
   return (
     <ContactContainer>
       <IconWrapper>
-        <Image src="/Icon_Contact.svg" fill alt="icon_profile" />
+        <Image src="/Icons/Icon_Contact.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineContact>CONTACT</HeadlineContact>
       <ContactIntro>
@@ -17,7 +17,7 @@ export default function Contact({ onPageChange }) {
         <ContactDetails>
           <IconNameContainer>
             <Image
-              src="Icon_Name.svg"
+              src="/Icons/Icon_Name.svg"
               width={30}
               height={30}
               alt="Icon profile"
@@ -27,7 +27,7 @@ export default function Contact({ onPageChange }) {
 
           <IconAddressContainer>
             <Image
-              src="Icon_Address.svg"
+              src="/Icons/Icon_Address.svg"
               width={30}
               height={30}
               alt="Icon address"
@@ -39,7 +39,7 @@ export default function Contact({ onPageChange }) {
 
           <IconPhoneContainer>
             <Image
-              src="Icon_Phone.svg"
+              src="/Icons/Icon_Phone.svg"
               width={30}
               height={30}
               alt="Icon_Phone.svg"
@@ -50,8 +50,13 @@ export default function Contact({ onPageChange }) {
       </ContactDetailsContainer>
 
       <Mail href="mailto:hi@phillip-oehlenberg.com">
-        <Image src="Icon_Mail.svg" width={50} height={50} alt="Icon_Mail.svg" />
-        <ButtonText>SEND E-MAIL</ButtonText>
+        <Image
+          src="/Icons/Icon_Mail.svg"
+          width={50}
+          height={50}
+          alt="Icon_Mail.svg"
+        />
+        <p>SEND E-MAIL</p>
       </Mail>
     </ContactContainer>
   );
@@ -204,5 +209,3 @@ const Mail = styled.a`
   grid-column: 1 / 2;
   grid-row: 5 / 6;
 `;
-
-const ButtonText = styled.p``;
