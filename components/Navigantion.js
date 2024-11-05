@@ -101,6 +101,9 @@ const StyledNavButton = styled.button`
     color: #fff;
     background-color: #000;
   }
+  @media (min-width: 600px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const PortfolioSubmenuContainer = styled.div`
@@ -136,6 +139,10 @@ const StyledSubMenuLink = styled(Link)`
     border-bottom: 3px solid #000;
     border-radius: 0 0 8px 8px;
   }
+
+  @media (min-width: 600px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -166,4 +173,6 @@ const StyledLink = styled(Link)`
     border-right: 3px solid #000;
     border-radius: 0 8px 8px 0;
   }
+
+  font-size: 0.95rem;
 `;
