@@ -16,10 +16,12 @@ export default function Profile({ onPageChange }) {
         <Image src="/Icons/Icon_Profile.svg" fill alt="icon_profile" />
       </IconWrapper>
       <HeadlineProfile>THAT&apos;S ME</HeadlineProfile>
-      <ImageWrapper>
-        <Image src="/profile.jpg" fill alt="profile_picture" priority />
-      </ImageWrapper>
-      <FillerProfile />
+      <ImageAndFillerContainer>
+        <ImageWrapper>
+          <Image src="/profile.jpg" fill alt="profile_picture" priority />
+        </ImageWrapper>
+        <FillerProfile />
+      </ImageAndFillerContainer>
       <TextProfile>
         I&apos;m a freshly trained Frontend Web Developer and seasoned graphic
         designer based in Hamburg, with over a dozen years of professional
@@ -90,7 +92,7 @@ const contentAnimation = keyframes`
 
 const ProfileContainer = styled.section`
   position: relative;
-  width: 100vw;
+  width: 92vw;
   max-width: 1104px;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
@@ -98,7 +100,7 @@ const ProfileContainer = styled.section`
   margin-top: 7rem;
   margin-bottom: 7rem;
   display: grid;
-  grid-template-columns: minmax(min(65vw, 300px), 1fr) 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto auto auto;
   gap: 4vw;
 `;
@@ -128,21 +130,27 @@ const HeadlineProfile = styled.h1`
   grid-row: 2 / 3;
 `;
 
+const ImageAndFillerContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: auto;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+`;
+
 const ImageWrapper = styled.div`
   position: relative;
   width: 65vw;
   max-width: 300px;
   aspect-ratio: 6 / 6.35;
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
+
   background-color: #fff;
   justify-content: center;
   object-fit: contain;
 `;
 
 const FillerProfile = styled.div`
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  flex-grow: 1;
   background: repeating-linear-gradient(
     -45deg,
     #000 0px,
@@ -157,12 +165,21 @@ const TextProfile = styled.p`
   justify-self: center;
   line-height: 1.6;
   color: #fff;
-  width: 92vw;
   padding: 16px;
   grid-column: 1 / 3;
   grid-row: 4 / 5;
   background-color: #000;
   border-radius: 0 0 8px 8px;
+
+  @media screen and (min-width: 700px) {
+    columns: 2;
+    column-gap: 16px;
+  }
+
+  @media screen and (min-width: 700px) {
+    columns: 3;
+    column-gap: 16px;
+  }
 `;
 
 const StripedFillerContainer = styled.div`
@@ -185,7 +202,7 @@ const StripedFiller = styled.div`
 const SoftSkillsContainer = styled.div`
   padding-top: 40px;
   margin: 0 auto;
-  width: 92vw;
+  width: 100%;
   grid-column: 1 / 3;
   grid-row: 6 / 7;
 `;
@@ -193,7 +210,7 @@ const SoftSkillsContainer = styled.div`
 const Icons = styled.div`
   padding-top: 40px;
   margin: 0 auto;
-  width: 92vw;
+  width: 100%;
   grid-column: 1 / 3;
   grid-row: 7 / 8;
 `;
