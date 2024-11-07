@@ -49,7 +49,7 @@ export default function GraphicPortfolio({
         <Filler />
         <PortfolioCarousel
           images={packegingImagesData}
-          title="Packaging"
+          title="Packaging Design"
           onShowLargeImage={handleshowLargeImage}
         />
       </GraphicPortfolioContainer>
@@ -97,7 +97,7 @@ const PortfolioContainer = styled.section`
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;
-  width: 92vw;
+  width: 100%;
   max-width: 1104px;
   margin-top: 7rem;
   margin-bottom: 7rem;

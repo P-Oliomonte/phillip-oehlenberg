@@ -5,7 +5,7 @@ import {
   iconSets,
 } from "@/lib/resume-data";
 import ResumeCategory from "@/components/ResumeCategory";
-import IconContainer from "@/components/IconContainer";
+import IconsField from "@/components/IconsField";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,18 +30,22 @@ export default function CV({ onPageChange }) {
       </IconWrapper>
       <HeadlineCV>CV</HeadlineCV>
 
-      <Icons>
-        <IconContainer iconSet={languageIcons} />
-        <IconContainer iconSet={techStackIcons} />
-        <IconContainer iconSet={graphicsAppsIcons} />
-      </Icons>
+      <IconsContainer>
+        <IconsField iconSet={techStackIcons} />
+        <IconsField iconSet={graphicsAppsIcons} />
+        <IconsField iconSet={languageIcons} />
+      </IconsContainer>
 
       <StripedFiller />
 
       <ResumeContainer>
-        <ResumeCategory data={workExperiences} />
-        <ResumeCategory data={education} />
-        <ResumeCategory data={school} />
+        <WorkExperienceContainer>
+          <ResumeCategory data={workExperiences} />
+        </WorkExperienceContainer>
+        <EducationAndSchoolContainer>
+          <ResumeCategory data={education} />
+          <ResumeCategory data={school} />
+        </EducationAndSchoolContainer>
       </ResumeContainer>
       <StyledLink href="/portfolio">Go to Portfolio &gt;&gt;&gt;</StyledLink>
     </CvContainer>
@@ -109,12 +113,13 @@ const HeadlineCV = styled.h1`
   grid-row: 2 / 3;
 `;
 
-const Icons = styled.div`
+const IconsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
   padding-bottom: 40px;
-  width: 100%;
   margin: 0 auto;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
@@ -134,14 +139,28 @@ const StripedFiller = styled.div`
 `;
 
 const ResumeContainer = styled.div`
-  margin: 0 auto;
-  width: 92vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   grid-column: 1 / 3;
-  grid-row: 5/6;
+  grid-row: 5 / 6;
   padding-top: 40px;
+`;
 
-  /* column-count: 2;
-  column-gap: 30px; */
+const WorkExperienceContainer = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
+  }
+`;
+
+const EducationAndSchoolContainer = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
+  }
 `;
 
 const StyledLink = styled(Link)`

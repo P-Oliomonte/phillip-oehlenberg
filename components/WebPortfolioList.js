@@ -70,9 +70,14 @@ export default function WebPortfolioList({ data }) {
 
 const PortfolioContainer = styled.section`
   padding-bottom: 80px;
+  width: 100%;
 
   &:nth-last-of-type(1) {
     padding-bottom: 0;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
   }
 `;
 

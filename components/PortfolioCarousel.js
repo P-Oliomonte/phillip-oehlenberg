@@ -56,6 +56,11 @@ const CarouselContainer = styled.div`
   padding: 20px;
   padding-top: 0;
   position: relative;
+
+  @media screen and (min-width: 1104px) {
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+  }
 `;
 
 const ScrollBody = styled.div`

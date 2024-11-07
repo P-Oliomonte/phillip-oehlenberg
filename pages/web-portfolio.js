@@ -99,7 +99,11 @@ const HeadlineProfile = styled.h1`
 `;
 
 const WebPortfolioContainer = styled.div`
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;

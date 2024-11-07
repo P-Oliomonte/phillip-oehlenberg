@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { iconSets } from "@/lib/resume-data";
 import Image from "next/image";
 import Link from "next/link";
-import IconContainer from "@/components/IconContainer";
+import IconsField from "@/components/IconsField";
 import SoftSkills from "@/components/SoftSkills";
 
 export default function Profile({ onPageChange }) {
@@ -56,13 +56,11 @@ export default function Profile({ onPageChange }) {
         <StripedFiller />
       </StripedFillerContainer>
 
-      <Icons>
-        <IconContainer iconSet={interestsAppsIcons} />
-      </Icons>
+      <IconsAndSoftskillsContainer>
+        <IconsField iconSet={interestsAppsIcons} />
 
-      <SoftSkillsContainer>
         <SoftSkills />
-      </SoftSkillsContainer>
+      </IconsAndSoftskillsContainer>
 
       <StyledLink href="/cv">Go to CV &gt;&gt;&gt;</StyledLink>
     </ProfileContainer>
@@ -103,6 +101,10 @@ const ProfileContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto auto auto;
   gap: 4vw;
+
+  @media screen and (min-width: 800px) {
+    grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto auto auto auto;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -199,20 +201,15 @@ const StripedFiller = styled.div`
   );
 `;
 
-const SoftSkillsContainer = styled.div`
-  padding-top: 40px;
-  margin: 0 auto;
+const IconsAndSoftskillsContainer = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   grid-column: 1 / 3;
   grid-row: 6 / 7;
-`;
-
-const Icons = styled.div`
   padding-top: 40px;
-  margin: 0 auto;
-  width: 100%;
-  grid-column: 1 / 3;
-  grid-row: 7 / 8;
 `;
 
 const StyledLink = styled(Link)`
@@ -227,4 +224,8 @@ const StyledLink = styled(Link)`
   animation-iteration-count: infinite;
   grid-column: 1 / 3;
   grid-row: 8 / 9;
+
+  @media screen and (min-width: 800px) {
+    grid-row: 7 / 8;
+  }
 `;
