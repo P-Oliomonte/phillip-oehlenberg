@@ -67,7 +67,7 @@ const ButtonContainer = styled.div`
   left: 50%;
   transform: translateY(-50%);
   transform: translateX(-50%);
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
   display: flex;
   justify-content: space-between;
@@ -102,7 +102,7 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000aa;
+  background-color: #000000eb;
   z-index: 1000;
   display: flex;
   justify-content: center;

@@ -62,7 +62,7 @@ export default function GraphicPortfolio({
           href="https://phillip-oehlenberg.com/"
           target="_blank"
         >
-          Full Graphic Design Portfolio
+          Check it out &gt;&gt;&gt;
         </StyledGraphicPortfolioLink>
       </GraphicPortfolioLinkContainer>
 
@@ -173,19 +173,21 @@ const GraphicPortfolioIntro = styled.p`
   font-weight: 500;
   font-size: 1.2rem;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 `;
 
 const StyledGraphicPortfolioLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   color: #000;
-  font-size: 1.1rem;
   font-weight: 500;
-  width: 50%;
   text-decoration: none;
   text-align: center;
   border: 3px solid #000;
   border-radius: 8px;
-  padding: 10px;
+  padding: 10px 14px;
 
   &:hover {
     color: #fff;

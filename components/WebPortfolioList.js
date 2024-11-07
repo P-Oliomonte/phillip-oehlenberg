@@ -176,10 +176,7 @@ const ProjectLinkWebsite = styled.a`
   background-color: #000;
   text-decoration: none;
   font-weight: 500;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 12px;
   border: 2px solid #000;
   border-radius: 8px;
 `;

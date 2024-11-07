@@ -58,8 +58,8 @@ const CarouselContainer = styled.div`
   position: relative;
 
   @media screen and (min-width: 1104px) {
-    border-left: 3px solid #000;
-    border-right: 3px solid #000;
+    border-left: 20px solid #000;
+    border-right: 20px solid #000;
   }
 `;
 
