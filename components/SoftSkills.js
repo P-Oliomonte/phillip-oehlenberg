@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function SoftSkills() {
   return (
-    <>
+    <SoftSkillsWrapper>
       <IconContainerHeadline>I am</IconContainerHeadline>
 
       <SoftSkillsCard>
@@ -13,9 +13,17 @@ export default function SoftSkills() {
           })}
         </StyledList>
       </SoftSkillsCard>
-    </>
+    </SoftSkillsWrapper>
   );
 }
+
+const SoftSkillsWrapper = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
+  }
+`;
 
 const IconContainerHeadline = styled.h2`
   width: 100%;

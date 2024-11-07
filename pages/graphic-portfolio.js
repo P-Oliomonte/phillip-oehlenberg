@@ -49,7 +49,7 @@ export default function GraphicPortfolio({
         <Filler />
         <PortfolioCarousel
           images={packegingImagesData}
-          title="Packaging"
+          title="Packaging Design"
           onShowLargeImage={handleshowLargeImage}
         />
       </GraphicPortfolioContainer>
@@ -62,7 +62,7 @@ export default function GraphicPortfolio({
           href="https://phillip-oehlenberg.com/"
           target="_blank"
         >
-          Full Graphic Design Portfolio
+          Check it out &gt;&gt;&gt;
         </StyledGraphicPortfolioLink>
       </GraphicPortfolioLinkContainer>
 
@@ -92,11 +92,13 @@ const breatheAnimation = keyframes`
 100% {letter-spacing: 0;}
 `;
 
-const PortfolioContainer = styled.main`
+const PortfolioContainer = styled.section`
   position: relative;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;
+  width: 100%;
+  max-width: 1104px;
   margin-top: 7rem;
   margin-bottom: 7rem;
   display: grid;
@@ -132,7 +134,7 @@ const HeadlineProfile = styled.h1`
 
 const GraphicPortfolioContainer = styled.div`
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;
@@ -171,19 +173,21 @@ const GraphicPortfolioIntro = styled.p`
   font-weight: 500;
   font-size: 1.2rem;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 `;
 
 const StyledGraphicPortfolioLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   color: #000;
-  font-size: 1.1rem;
   font-weight: 500;
-  width: 50%;
   text-decoration: none;
   text-align: center;
   border: 3px solid #000;
   border-radius: 8px;
-  padding: 10px;
+  padding: 10px 14px;
 
   &:hover {
     color: #fff;

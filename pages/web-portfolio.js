@@ -57,15 +57,16 @@ const breatheAnimation = keyframes`
 100% {letter-spacing: 0;}
 `;
 
-const PortfolioContainer = styled.main`
+const PortfolioContainer = styled.section`
   position: relative;
+  margin: 0 auto;
+  width: 92vw;
+  max-width: 1104px;
   animation-name: ${contentAnimation};
   animation-duration: 0.5s;
   margin: 0 auto;
   margin-top: 7rem;
   margin-bottom: 7rem;
-  padding-left: 4vw;
-  padding-right: 4vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(min(30vw, 160px), 1fr) auto auto auto;
@@ -98,8 +99,11 @@ const HeadlineProfile = styled.h1`
 `;
 
 const WebPortfolioContainer = styled.div`
-  margin: 0 auto;
-  width: 92vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 `;

@@ -13,13 +13,7 @@ export default function ImageModal({
     <Overlay onClick={onShowLargeImage}>
       <ImageWrapper>
         <StyledImageContainer>
-          <StyledImage
-            src={largeImage.imageUrl}
-            layout="responsive"
-            width={largeImage.width}
-            height={largeImage.height}
-            alt={largeImage.alt}
-          />
+          <StyledImage src={largeImage.imageUrl} alt={largeImage.alt} />
         </StyledImageContainer>
         <StyledImageTitle>{largeImage.imageTitle}</StyledImageTitle>
         <ButtonContainer>
@@ -42,37 +36,42 @@ export default function ImageModal({
 
 const ImageWrapper = styled.div`
   position: relative;
-  height: auto;
-  max-height: 94vh;
-  width: 94vw;
+  margin-left: 12px;
+  margin-right: 12px;
+  max-width: 900px;
   border-radius: 0 0 8px 8px;
-  background-color: #fff;
+  background-color: #000;
   border: 3px solid #000;
 `;
 
 const StyledImageContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  max-height: 80vh;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const StyledImage = styled(Image)`
-  display: block;
+const StyledImage = styled.img`
   width: 100%;
-  height: auto;
+  max-height: 80vh;
   object-fit: contain;
 `;
 
 const ButtonContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 10px;
-  right: 10px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
+
   pointer-events: none;
 `;
 
@@ -91,8 +90,10 @@ const StyledRoundButton = styled.button`
 
 const StyledImageTitle = styled.p`
   color: #000;
+  background-color: #fff;
   padding: 8px;
   border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
 `;
 
 const Overlay = styled.div`
@@ -101,7 +102,7 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000aa;
+  background-color: #000000eb;
   z-index: 1000;
   display: flex;
   justify-content: center;

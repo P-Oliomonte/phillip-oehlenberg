@@ -56,6 +56,11 @@ const CarouselContainer = styled.div`
   padding: 20px;
   padding-top: 0;
   position: relative;
+
+  @media screen and (min-width: 1104px) {
+    border-left: 20px solid #000;
+    border-right: 20px solid #000;
+  }
 `;
 
 const ScrollBody = styled.div`
@@ -71,8 +76,12 @@ const Slide = styled.button`
   margin-left: 20px;
   height: 220px;
 
-  @media (min-width: 600px) {
-    height: 300px;
+  @media screen and (min-width: 600px) {
+    height: 280px;
+  }
+
+  @media screen and (min-width: 800px) {
+    height: 340px;
   }
 `;
 

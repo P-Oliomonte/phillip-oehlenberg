@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-export default function IconContainer({ iconSet }) {
+export default function IconsField({ iconSet }) {
   return (
-    <div>
-      <IconContainerHeadline>{iconSet.title}</IconContainerHeadline>
+    <IconsFieldWrapper>
+      <IconsFieldHeadline>{iconSet.title}</IconsFieldHeadline>
 
       <MainContainer>
         {iconSet.icons.map((icon) => {
@@ -18,12 +18,19 @@ export default function IconContainer({ iconSet }) {
           );
         })}
       </MainContainer>
-    </div>
+    </IconsFieldWrapper>
   );
 }
 
-const IconContainerHeadline = styled.h2`
+const IconsFieldWrapper = styled.section`
   width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
+  }
+`;
+
+const IconsFieldHeadline = styled.h2`
   color: #fff;
   background-color: #000;
   box-shadow: 8px 8px #000;

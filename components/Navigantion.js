@@ -65,6 +65,7 @@ export default function Navigation() {
 
 const StyledNavigation = styled.nav`
   width: 94vw;
+  max-width: 700px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -101,6 +102,9 @@ const StyledNavButton = styled.button`
     color: #fff;
     background-color: #000;
   }
+  @media screen and (min-width: 600px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const PortfolioSubmenuContainer = styled.div`
@@ -136,6 +140,10 @@ const StyledSubMenuLink = styled(Link)`
     border-bottom: 3px solid #000;
     border-radius: 0 0 8px 8px;
   }
+
+  @media screen and (min-width: 600px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -165,5 +173,9 @@ const StyledLink = styled(Link)`
   &:nth-last-of-type(1) {
     border-right: 3px solid #000;
     border-radius: 0 8px 8px 0;
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 0.95rem;
   }
 `;
