@@ -48,7 +48,7 @@ export default function CV({ onPageChange }) {
         </EducationAndSchoolContainer>
       </ResumeContainer>
       <StyledLink href="/web-portfolio">
-        Go to WebDev Portfolio &gt;&gt;&gt;
+        Go to Portfolio &gt;&gt;&gt;
       </StyledLink>
     </CvContainer>
   );
