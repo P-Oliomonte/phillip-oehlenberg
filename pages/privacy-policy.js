@@ -22,11 +22,11 @@ export default function PrivacyPolicy() {
         Google Analytics is anonymized before storage and is solely used to
         improve user experience and understand visitor interests. No commercial
         or advertising purposes are associated with this data. For more
-        information on how Google collects and processes data, visit Google's
-        Privacy & Terms. To prevent data collection by Google Analytics,
-        visitors can install the Google Analytics opt-out browser add-on,
-        available here. 3. Data Usage Collected data is used exclusively for
-        website improvement purposes and is not shared with third parties,
+        information on how Google collects and processes data, visit
+        Google&apos;s Privacy & Terms. To prevent data collection by Google
+        Analytics, visitors can install the Google Analytics opt-out browser
+        add-on, available here. 3. Data Usage Collected data is used exclusively
+        for website improvement purposes and is not shared with third parties,
         except as required by law or to ensure the security of the website. 4.
         Data Security Reasonable security measures are implemented to protect
         personal information from unauthorized access, alteration, or
