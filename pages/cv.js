@@ -20,7 +20,7 @@ export default function CV({ onPageChange }) {
   )[0];
 
   const graphicsAppsIcons = iconSets.filter(
-    (iconSet) => iconSet.title === "Graphics Apps"
+    (iconSet) => iconSet.title === "Tools"
   )[0];
 
   return (

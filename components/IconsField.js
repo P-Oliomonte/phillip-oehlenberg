@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export default function IconsField({ iconSet }) {
+  console.log(iconSet);
   return (
     <IconsFieldWrapper>
       <IconsFieldHeadline>{iconSet.title}</IconsFieldHeadline>
