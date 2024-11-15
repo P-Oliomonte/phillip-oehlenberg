@@ -88,7 +88,7 @@ const PrivacyContainer = styled.section`
   margin-bottom: 7rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
   gap: 4vw;
 `;
 

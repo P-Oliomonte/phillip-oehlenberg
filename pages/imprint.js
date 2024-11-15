@@ -23,19 +23,18 @@ export default function Imprint() {
           Disclaimer: Liability for content
         </DisclaimerHeadline>{" "}
         <Text>
-          The content of our website has been created with the greatest possible
-          care. However, we cannot assume any liability for the accuracy,
-          completeness and up-to-dateness of the content. As a service provider,
-          we are responsible for our own content on these pages in accordance
-          with § 7 (1) TMG (German Telemedia Act) and general laws. According to
-          §§ 8 to 10 TMG, however, we as a service provider are not obliged to
-          monitor transmitted or stored third-party information or to
-          investigate circumstances that indicate illegal activity. Obligations
-          to remove or block the use of information in accordance with general
-          legislation remain unaffected by this. However, liability in this
-          respect is only possible from the time of knowledge of a specific
-          infringement. As soon as we become aware of such infringements, we
-          will remove this content immediately.
+          The content of my website has been created with the greatest possible
+          care. However, I cannot assume any liability for the accuracy,
+          completeness and up-to-dateness of the content. I am responsible for
+          our own content on these pages in accordance with § 7 (1) TMG (German
+          Telemedia Act) and general laws. According to §§ 8 to 10 TMG, however,
+          I am not obliged to monitor transmitted or stored third-party
+          information or to investigate circumstances that indicate illegal
+          activity. Obligations to remove or block the use of information in
+          accordance with general legislation remain unaffected by this.
+          However, liability in this respect is only possible from the time of
+          knowledge of a specific infringement. As soon as I become aware of
+          such infringements, I will remove this content immediately.
         </Text>
       </MainText>
     </ImprintContainer>
@@ -63,7 +62,7 @@ const ImprintContainer = styled.section`
   margin-bottom: 7rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
   gap: 4vw;
 `;
 
