@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Plant() {
   return (
@@ -10,13 +11,26 @@ export default function Plant() {
           <StyledImage src="/Pflanze.jpg" fill alt="plant" />
         </ImageWrapper>
       </StripedContainer>
-      <StyledText>
-        Das ist meine Lieblingspflanze. Ein Drachenbaum, der mich seit über 20
-        Jahren begleitet.{" "}
-      </StyledText>
+      <TextContainer>
+        <StyledText>
+          Das ist meine Lieblingspflanze. Ein Drachenbaum, der mich seit über 20
+          Jahren begleitet.
+        </StyledText>
+        <StyledText>
+          Wenn Ihr mehr über ihn oder mich erfahren möchtet, würde ich mich
+          freuen von Euch zu hören.
+        </StyledText>
+      </TextContainer>
+      <StyledLink href="/contact">Contact &gt;&gt;&gt;</StyledLink>
     </PlantContainer>
   );
 }
+
+const breatheAnimation = keyframes`
+0% {letter-spacing: 0;}
+50% {letter-spacing: 0.03rem;}
+100% {letter-spacing: 0;}
+`;
 
 const PlantContainer = styled.section`
   position: relative;
@@ -28,7 +42,7 @@ const PlantContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
-  gap: 4vw;
+  gap: 30px;
 `;
 
 const HeadlineProfile = styled.h1`
@@ -43,7 +57,6 @@ const HeadlineProfile = styled.h1`
 
 const StripedContainer = styled.div`
   margin: 0 auto;
-  display: flex;
   padding: 25px;
   background: repeating-linear-gradient(
     -45deg,
@@ -69,9 +82,30 @@ const StyledImage = styled(Image)`
   object-fit: cover;
 `;
 
-const StyledText = styled.p`
-  text-align: center;
-  font-size: 1.2rem;
+const TextContainer = styled.div`
   grid-column: 1 / 2;
   grid-row: 3 / 4;
+`;
+
+const StyledText = styled.p`
+  width: 92vw;
+  max-width: 500px;
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 1.2rem;
+  justify-self: center;
+`;
+
+const StyledLink = styled(Link)`
+  text-align: center;
+  font-size: min(4.5vw, 1.5rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  padding-top: 2rem;
+  animation-name: ${breatheAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
 `;
