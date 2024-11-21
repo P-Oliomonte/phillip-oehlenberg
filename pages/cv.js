@@ -151,9 +151,11 @@ const ResumeContainer = styled.div`
 
 const WorkExperienceContainer = styled.div`
   width: 100%;
+  padding-bottom: 50px;
 
   @media screen and (min-width: 800px) {
     width: calc(50% - 20px);
+    padding-bottom: 0;
   }
 `;
 
